@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
-      <h3 class="text-center">Sign up</h3>
-      <%= bootstrap_form_with(model: @project, local: true) do |f| %>
+      <h3 class="text-center">Edit your task</h3>
+      <%= bootstrap_form_with(model: @task, local: true) do |f| %>
         <%= f.text_field :name, label: "Name", placeholder: "name" %>
-        <%= f.text_field :description, placeholder: "description" %>
+        <%= f.text_field :content, placeholder: "description" %>
         <%= f.submit "Update" %>
         <%= link_to "Back", root_path, :class => "navbar-brand" %>
       <% end %>
