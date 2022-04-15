@@ -3,10 +3,10 @@
     <div class="col-sm-offset-4 col-sm-4">
       <h3 class="text-center">Create new task</h3>
       <%= bootstrap_form_with(model: @task, local: true) do |f| %>
-        <%= f.text_field :name, label: "Name", placeholder: "name" %>
+        <%= f.text_field :title, label: "Name", placeholder: "name" %>
         <%= f.text_field :content, placeholder: "description" %>
-        <%= f.submit "Update" %>
-        <%= link_to "Back", root_path, :class => "navbar-brand" %>
+        <%= f.submit "Save", :class => "btn btn-primary" %>
+        <%= link_to "Back", root_path, :class => "btn btn-primary" %>
       <% end %>
      </div>
   </div>

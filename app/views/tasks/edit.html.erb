@@ -5,8 +5,8 @@
       <%= bootstrap_form_with(model: @task, local: true) do |f| %>
         <%= f.text_field :name, label: "Name", placeholder: "name" %>
         <%= f.text_field :content, placeholder: "description" %>
-        <%= f.submit "Update" %>
-        <%= link_to "Back", root_path, :class => "navbar-brand" %>
+        <%= f.submit "Update", :class => "btn btn-primary" %>
+        <%= link_to "Back", root_path, :class => "btn btn-primary" %>
       <% end %>
      </div>
   </div>
