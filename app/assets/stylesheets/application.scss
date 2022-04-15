@@ -12,5 +12,24 @@
  *
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+// Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Variables
+@import "base/variables";
+@import "base/default";
+
+// Partials - main css files
+@import "partials/layout/*";
+@import "responsive/*";
+@import "partials/home";
+
+ #sign-up-form {
+  margin-top: 100px;
+  h1 {
+    font-size: 36px !important;
+    font-size: 3.6rem !important;
+  }
+  padding-bottom: 20px; 
+}

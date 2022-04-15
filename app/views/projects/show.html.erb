@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div id="side-menu"  class="col-sm-3">
+    </div><!-- side-menu -->
+
+    <div id="main-content" class="col-sm-9">
+      <%= render "task", tasks: @tasks %>
+    </div><!-- main-content -->
+    <div style="padding: 2%">
+      <%= button_to 'Remove', project_path(@project.id), method: 'delete', data: { confirm: 'Are you sure?' } %>
+    </div>
+
+  </div><!-- row -->
+</div><!-- container --> %>
