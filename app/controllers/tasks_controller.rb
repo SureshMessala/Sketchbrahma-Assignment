@@ -12,7 +12,7 @@ class TasksController < ApplicationController
     task = Task.create(task_params)
     task.user_id = current_user.id
     task.project_id = Project.find_by(user_id: current_user.id)
-    if project.save
+    if task.save
       redirect_to root_path()
       flash[:notice] = "Project was created"
     else
@@ -49,6 +49,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :title)
+    params.require(:task).permit(:title, :content)
   end
 end
