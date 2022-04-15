@@ -20,6 +20,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
   def update
     @project = Project.update(project_params)
     @project.user_id = current_user.id
