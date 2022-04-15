@@ -10,11 +10,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(project_params)
-    @project.user_id = current_user.id
-    if @project.save
-      flash[:notice] = 'Product added!'
-      redirect_to project_path(@project.id)
+    project = Project.create(project_params)
+    project.user_id = current_user.id
+    if project.save
+      redirect_to root_path()
+      flash[:notice] = "Project was created"
     else
       redirect_to new_project_path()
     end
@@ -47,6 +47,3 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :description, :user_id)
   end
 end
-
-
-

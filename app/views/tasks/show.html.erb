@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div id="side-menu"  class="col-sm-3">
+    </div><!-- side-menu -->
+    <div id="main-content" class="col-sm-9">
+      <div class="col-sm-3 single-post-card" id=<%= task_path(@task.id) %>>
+        <div class="card">
+          <%= truncate(@task.title, :length => 60) %>
+          <p><%= @task.content %></p>
+        </div>
+      </div>
+      <div>
+        <%= link_to "Back", :back, :class => "navbar-brand" %>
+      </div>
+    </div>
+  </div>
+</div>
+

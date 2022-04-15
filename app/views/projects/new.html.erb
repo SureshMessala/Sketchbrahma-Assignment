@@ -1,12 +1,13 @@
-<div class="container" id="sign-up-form">
+<div class="container">
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
       <h3 class="text-center">Sign up</h3>
-      <%= form_with(model: @project, method: :post) do |form| %>
-        <%= form.text_field :name, placeholder: "name" %>
+      <%= form_with model: @project do |form| %>
+        <%= form.text_field :name, label: "Name", placeholder: "name" %>
         <%= form.text_field :description, placeholder: "description" %>
         <%= form.submit %>
+        <%= link_to "Back", root_path, :class => "navbar-brand" %>
       <% end %>
-    </div>
+     </div>
   </div>
 </div>
