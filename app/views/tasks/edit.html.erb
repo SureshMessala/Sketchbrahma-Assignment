@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
       <h3 class="text-center">Edit your task</h3>
-      <%= bootstrap_form_with(model: @task, local: true) do |f| %>
-        <%= f.text_field :name, label: "Name", placeholder: "name" %>
+      <%= bootstrap_form_with(model: @task, local: true, url: project_task_path(@project.id, @task.id)) do |f| %>
+        <%= f.text_field :title, label: "Title", placeholder: "Title" %>
         <%= f.text_field :content, placeholder: "description" %>
         <%= f.submit "Update", :class => "btn btn-primary" %>
         <%= link_to "Back", root_path, :class => "btn btn-primary" %>

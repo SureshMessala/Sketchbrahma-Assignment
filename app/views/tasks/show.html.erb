@@ -3,7 +3,7 @@
     <div id="side-menu"  class="col-sm-3">
     </div><!-- side-menu -->
     <div id="main-content" class="col-sm-9">
-      <div class="col-sm-3 single-post-card" id=<%= task_path(@task.id) %>>
+      <div class="col-sm-3 single-post-card" id=<%= project_task_path(@project.id, @task.id) %>>
         <div class="card">
           <%= truncate(@task.title, :length => 60) %>
           <p><%= @task.content %></p>
@@ -11,6 +11,8 @@
       </div>
       <div>
         <%= link_to "Back", :back, :class => "navbar-brand" %>
+        <%= link_to 'Edit Task', edit_project_task_path(@project.id, @task.id), :class => "navbar-brand" %>
+        <%= link_to 'Delete Task', project_task_path(@project.id, @task.id), :class => "navbar-brand", method: 'delete', data: { confirm: 'Are you sure?', :class => "navbar-brand" } %>
       </div>
     </div>
   </div>

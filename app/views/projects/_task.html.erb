@@ -1,9 +1,9 @@
 <% tasks.each do |task| %>
-  <div class="col-sm-3 single-post-card" id=<%= task_path(task.id) %>>
+  <div class="col-sm-3 single-post-card" id=<%= project_task_path(@project.id, task.id) %>>
     <div class="card">
       <%= truncate(task.title, :length => 60) %>
       <p><%= task.content %></p>
-      <%= link_to "View Task", task_path(task.id), class: 'interested' %>
+      <%= link_to "View Task", project_task_path(@project.id, task.id), class: 'interested' %>
     </div>
   </div>
 <% end %>

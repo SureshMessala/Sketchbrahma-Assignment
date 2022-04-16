@@ -1,8 +1,8 @@
 
 <% projects.each do |project| %>
-  <div class="col-sm-3 single-post-card" id=<%= project_path(project.id) %>>
-    <div class="card">
-      <h4><%= truncate(project.name, :length => 60) %></h4>
+  <div class="col-sm-3 single-post-card" style="width: 35%; max-height: fit-content" id=<%= project_path(project.id) %>>
+    <div class="card" style="overflow-wrap: break-word;">
+      <b><h4><%= truncate(project.name, :length => 60) %></h4></b>
       <div class="posted-by">Project by <%= project.user.name %></div>
       <p><%= project.description %></p>
       <%= link_to "View Tasks", project_path(project.id), class: 'interested' %>
