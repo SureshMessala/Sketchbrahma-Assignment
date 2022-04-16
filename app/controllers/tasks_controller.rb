@@ -12,7 +12,6 @@ class TasksController < ApplicationController
 
   def create
     task = Task.create(task_params)
-    task.user_id = current_user.id
     task.project_id = Project.find(params[:project_id]).id
     if task.save
       redirect_to project_path(params[:project_id])
@@ -23,23 +22,21 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @project = Project.find params[:project_id]
     @task = Task.find(params[:id])
   end
 
   def update
     task = Task.find(params[:id])
     if task.update(task_params)
-      flash[:notice] = 'Task added!'
-      redirect_to project_task_path(task.project_id, task.id)
+      redirect_to project_path(task.project_id)
     else
-      redirect_to new_project_path()
+      redirect_to edit_project_task_path(task.id)
     end
   end
 
   def destroy
     task = Task.find_by_id(params[:id])
-    project_id = task.project_id
+    # project_id = task.project_id
     if task.destroy
       redirect_to project_path(params[:project_id])
       flash[:Success] = "Task is deleted"

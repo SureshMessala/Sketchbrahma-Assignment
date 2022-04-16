@@ -9,8 +9,7 @@
     <div>
       <%= link_to "Add new task", new_project_task_path(@project.id), :class => "navbar-brand" %>
       <%= link_to "Back", root_path, :class => "navbar-brand" %>
-      <%= link_to 'Edit Project', edit_project_path(@project.id), :class => "navbar-brand" %>
-      <%= link_to 'Delete Project', project_path(@project.id), :class => "navbar-brand", method: 'delete', data: { confirm: 'Are you sure?', :class => "navbar-brand" } %>
+      <%= link_to 'Delete', project_path(@project.id), :class => "navbar-brand", method: 'delete', data: { confirm: 'Are you sure to delete project?', :class => "navbar-brand" } %>
     </div>
   </div>
 </div>

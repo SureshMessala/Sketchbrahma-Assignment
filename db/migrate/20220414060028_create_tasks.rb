@@ -4,7 +4,6 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.belongs_to :project, index: true
-      t.belongs_to :user, index: true
       t.timestamps
     end
   end

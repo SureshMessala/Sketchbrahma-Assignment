@@ -27,10 +27,9 @@ class ProjectsController < ApplicationController
   def update
     project = Project.find(params[:id])
     if project.update(project_params)
-      flash[:notice] = 'Project Updated!'
-      redirect_to project_path(project.id)
+      redirect_to root_path
     else
-      redirect_to new_project_path()
+      redirect_to edit_project_path(project.id)
     end
   end
 

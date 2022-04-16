@@ -38,13 +38,12 @@ def seed_tasks
       Task.create(
         title: Faker::Lorem.sentences[0], 
         content: Faker::Lorem.sentences[0], 
-        user_id: rand(1..9), 
         project_id: project.id
       )
     end
   end
 end
 
-# seed_users
+seed_users
 seed_projects
-# seed_tasks
+seed_tasks
